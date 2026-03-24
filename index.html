@@ -19,6 +19,9 @@
         .gradient-text-orange { background: linear-gradient(90deg, #f59e0b, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .gradient-text-blue { background: linear-gradient(90deg, #3b82f6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .gradient-text-cyan { background: linear-gradient(90deg, #22d3ee, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gradient-text-pink { background: linear-gradient(90deg, #f472b6, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gradient-text-emerald { background: linear-gradient(90deg, #10b981, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gradient-text-indigo { background: linear-gradient(90deg, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
         .glass-card {
             background: rgba(255, 255, 255, 0.03);
@@ -41,6 +44,9 @@
         .badge-orange { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
         .badge-blue { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
         .badge-cyan { background: rgba(34, 211, 238, 0.1); color: #22d3ee; }
+        .badge-pink { background: rgba(244, 114, 182, 0.1); color: #f472b6; }
+        .badge-emerald { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+        .badge-indigo { background: rgba(99, 102, 241, 0.1); color: #818cf8; }
 
         .tech-pill {
             background: rgba(255, 255, 255, 0.05);
@@ -60,7 +66,6 @@
             height: 220px;
         }
 
-        /* Expansion Logic */
         .details-content {
             max-height: 0;
             opacity: 0;
@@ -69,7 +74,7 @@
         }
 
         .glass-card.expanded .details-content {
-            max-height: 1000px;
+            max-height: 1200px;
             opacity: 1;
             margin-top: 2rem;
             padding-top: 2rem;
@@ -77,18 +82,13 @@
             pointer-events: auto;
         }
 
-        .expand-icon {
-            transition: transform 0.3s ease;
-        }
-        .expanded .expand-icon {
-            transform: rotate(180deg);
-        }
+        .expand-icon { transition: transform 0.3s ease; }
+        .expanded .expand-icon { transform: rotate(180deg); }
     </style>
 </head>
 <body class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
 
     <div class="max-w-5xl mx-auto">
-        <!-- Header -->
         <header class="mb-16 text-center">
             <h1 class="text-4xl sm:text-6xl font-bold tracking-tight mb-4">Projects Showcase</h1>
             <p class="text-neutral-400 text-lg">Engineering intelligent solutions for real-world impact.</p>
@@ -111,7 +111,7 @@
                                     <svg class="expand-icon w-5 h-5 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                                 </div>
                             </div>
-                            <p class="text-neutral-400 mt-4 leading-relaxed">Automated site safety inspections using a custom CV pipeline. Monitors live feeds to ensure 100% PPE compliance, detecting hardhats, vests, and gloves in real-time.</p>
+                            <p class="text-neutral-400 mt-4 leading-relaxed">Automated site safety inspections using a custom CV pipeline. Monitors live feeds to ensure 100% PPE compliance, detecting hardhats and vests in real-time.</p>
                         </div>
                         <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
                             <div><p class="text-xl font-bold text-white">94% mAP</p><p class="text-xs uppercase text-neutral-500">Detection Accuracy</p></div>
@@ -122,31 +122,24 @@
                         <div class="mockup-container p-3 flex flex-col">
                             <div class="relative flex-grow rounded-lg overflow-hidden bg-neutral-900 border border-white/5">
                                 <div class="absolute top-2 left-2 px-1.5 py-0.5 bg-red-600 text-[8px] font-bold text-white rounded uppercase animate-pulse">REC</div>
-                                <div class="absolute inset-0 flex items-center justify-center opacity-20">
-                                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-                                </div>
-                                <div class="absolute top-1/4 left-1/4 w-12 h-20 border-2 border-green-400 rounded-sm">
-                                    <span class="absolute -top-3 left-0 bg-green-400 text-[6px] text-black px-1 font-bold">PPE: OK</span>
-                                </div>
-                                <div class="absolute top-1/3 right-1/4 w-12 h-20 border-2 border-red-500 rounded-sm">
-                                    <span class="absolute -top-3 left-0 bg-red-500 text-[6px] text-white px-1 font-bold">MISSING_VEST</span>
-                                </div>
+                                <div class="absolute inset-0 flex items-center justify-center opacity-20"><svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></div>
+                                <div class="absolute top-1/4 left-1/4 w-12 h-20 border-2 border-green-400 rounded-sm"><span class="absolute -top-3 left-0 bg-green-400 text-[6px] text-black px-1 font-bold">PPE: OK</span></div>
+                                <div class="absolute top-1/3 right-1/4 w-12 h-20 border-2 border-red-500 rounded-sm"><span class="absolute -top-3 left-0 bg-red-500 text-[6px] text-white px-1 font-bold">MISS_VEST</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Expansion Content -->
                 <div class="details-content grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="space-y-4">
                         <h3 class="text-sm font-semibold uppercase text-green-400 tracking-wider">The Mission</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed">To eliminate human error in safety inspections within high-risk construction environments. This project replaces manual oversight with an objective, 24/7 AI-driven monitoring system that alerts supervisors instantly to violations.</p>
+                        <p class="text-neutral-400 text-sm leading-relaxed">Eliminate human error in safety inspections. This project replaces manual oversight with a 24/7 AI-driven monitoring system for high-risk construction environments.</p>
                     </div>
                     <div class="space-y-4">
                         <h3 class="text-sm font-semibold uppercase text-green-400 tracking-wider">Technical Core</h3>
                         <ul class="space-y-2 text-sm text-neutral-400">
-                            <li class="flex items-start gap-2"><span>•</span> Custom YOLOv8 training on over 5,000 annotated safety images.</li>
-                            <li class="flex items-start gap-2"><span>•</span> Optimized TensorRT integration for edge-device deployment.</li>
-                            <li class="flex items-start gap-2"><span>•</span> Real-time video frame parsing using OpenCV with low-latency threading.</li>
+                            <li>• Custom YOLOv8 training on 5k+ annotated safety images.</li>
+                            <li>• Optimized TensorRT integration for edge-device deployment.</li>
+                            <li>• Real-time video frame parsing with low-latency threading.</li>
                         </ul>
                     </div>
                 </div>
@@ -166,7 +159,7 @@
                                     <svg class="expand-icon w-5 h-5 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                                 </div>
                             </div>
-                            <p class="text-neutral-400 mt-4 leading-relaxed">Built a robust Random Forest classifier for highly imbalanced datasets. Utilized SMOTE and feature engineering to detect fraudulent transactions with 96% accuracy.</p>
+                            <p class="text-neutral-400 mt-4 leading-relaxed">Built a robust Random Forest classifier for highly imbalanced datasets. Utilized SMOTE to detect fraudulent transactions with 96% accuracy.</p>
                         </div>
                         <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
                             <div><p class="text-xl font-bold text-white">0.92</p><p class="text-xs uppercase text-neutral-500">F1-Score</p></div>
@@ -176,39 +169,27 @@
                     <div class="md:col-span-2">
                         <div class="mockup-container p-4 bg-neutral-950 flex flex-col justify-center">
                             <div class="space-y-3">
-                                <div class="flex justify-between items-center text-[10px] text-neutral-500 font-mono">
-                                    <span>RISK_HEATMAP</span>
-                                    <span class="text-purple-400">GEN_02.X</span>
-                                </div>
+                                <div class="flex justify-between items-center text-[10px] text-neutral-500 font-mono"><span>RISK_HEATMAP</span><span class="text-purple-400">GEN_02.X</span></div>
                                 <div class="grid grid-cols-4 gap-1 h-24">
-                                    <div class="bg-purple-900/20 rounded"></div>
-                                    <div class="bg-purple-900/40 rounded"></div>
-                                    <div class="bg-purple-600 rounded animate-pulse"></div>
-                                    <div class="bg-purple-900/20 rounded"></div>
-                                    <div class="bg-purple-900/60 rounded"></div>
-                                    <div class="bg-red-500 rounded"></div>
-                                    <div class="bg-purple-900/20 rounded"></div>
-                                    <div class="bg-purple-900/40 rounded"></div>
+                                    <div class="bg-purple-900/20 rounded"></div><div class="bg-purple-900/40 rounded"></div><div class="bg-purple-600 rounded animate-pulse"></div><div class="bg-purple-900/20 rounded"></div>
+                                    <div class="bg-purple-900/60 rounded"></div><div class="bg-red-500 rounded"></div><div class="bg-purple-900/20 rounded"></div><div class="bg-purple-900/40 rounded"></div>
                                 </div>
-                                <div class="h-2 w-full bg-white/5 rounded-full overflow-hidden">
-                                    <div class="h-full bg-purple-500 w-[85%]"></div>
-                                </div>
+                                <div class="h-2 w-full bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-purple-500 w-[85%]"></div></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Expansion Content -->
                 <div class="details-content grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="space-y-4">
                         <h3 class="text-sm font-semibold uppercase text-purple-400 tracking-wider">The Mission</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed">Designing a defensive financial layer that identifies anomalies in transaction patterns. The goal was to maximize fraud detection (Recall) while minimizing false alarms for legitimate users.</p>
+                        <p class="text-neutral-400 text-sm leading-relaxed">Design a defensive financial layer that identifies anomalies while minimizing false alarms for legitimate users through advanced risk-scoring.</p>
                     </div>
                     <div class="space-y-4">
                         <h3 class="text-sm font-semibold uppercase text-purple-400 tracking-wider">Technical Core</h3>
                         <ul class="space-y-2 text-sm text-neutral-400">
-                            <li class="flex items-start gap-2"><span>•</span> Synthetic Minority Over-sampling Technique (SMOTE) to balance the data.</li>
-                            <li class="flex items-start gap-2"><span>•</span> Hyperparameter tuning using GridSearchCV for Random Forest Optimization.</li>
-                            <li class="flex items-start gap-2"><span>•</span> Feature importance analysis to identify top behavioral fraud indicators.</li>
+                            <li>• SMOTE for addressing extreme data imbalance.</li>
+                            <li>• Hyperparameter tuning using GridSearchCV for optimization.</li>
+                            <li>• Feature importance analysis for behavioral fraud indicators.</li>
                         </ul>
                     </div>
                 </div>
@@ -242,32 +223,23 @@
                                 <div class="w-2 h-2 rounded-full bg-green-500"></div>
                             </div>
                             <div class="flex items-end gap-1 h-20 px-2">
-                                <div class="bg-orange-500/10 w-full h-[30%]"></div>
-                                <div class="bg-orange-500/30 w-full h-[55%]"></div>
-                                <div class="bg-orange-500/50 w-full h-[40%]"></div>
-                                <div class="bg-orange-500 w-full h-[85%]"></div>
-                                <div class="bg-orange-500/70 w-full h-[60%]"></div>
-                                <div class="bg-orange-500/20 w-full h-[20%]"></div>
+                                <div class="bg-orange-500/10 w-full h-[30%]"></div><div class="bg-orange-500/30 w-full h-[55%]"></div><div class="bg-orange-500/50 w-full h-[40%]"></div><div class="bg-orange-500 w-full h-[85%]"></div>
                             </div>
-                            <div class="mt-3 flex justify-between text-[8px] text-neutral-600 font-mono">
-                                <span>SLOW_QUERY_DETECTED</span>
-                                <span>0.42ms</span>
-                            </div>
+                            <div class="mt-3 flex justify-between text-[8px] text-neutral-600 font-mono"><span>SLOW_QUERY_DETECTED</span><span>0.42ms</span></div>
                         </div>
                     </div>
                 </div>
-                <!-- Expansion Content -->
                 <div class="details-content grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="space-y-4">
                         <h3 class="text-sm font-semibold uppercase text-orange-400 tracking-wider">The Mission</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed">Bridging the gap between raw database metrics and actionable management reports. This system ensures DBAs are notified of performance bottlenecks before they impact end-users.</p>
+                        <p class="text-neutral-400 text-sm leading-relaxed">Bridge the gap between raw database metrics and actionable management reports to prevent performance bottlenecks.</p>
                     </div>
                     <div class="space-y-4">
                         <h3 class="text-sm font-semibold uppercase text-orange-400 tracking-wider">Technical Core</h3>
                         <ul class="space-y-2 text-sm text-neutral-400">
-                            <li class="flex items-start gap-2"><span>•</span> Log scraping and parsing using regex for PostgreSQL system tables.</li>
-                            <li class="flex items-start gap-2"><span>•</span> Dynamic HTML report generation with inline CSS for cross-client email compatibility.</li>
-                            <li class="flex items-start gap-2"><span>•</span> Automated scheduling using Python's 'schedule' library for daily auditing.</li>
+                            <li>• Regex-based log scraping for PostgreSQL system tables.</li>
+                            <li>• Dynamic HTML report generation with inline CSS.</li>
+                            <li>• Python 'schedule' automation for daily auditing.</li>
                         </ul>
                     </div>
                 </div>
@@ -287,7 +259,7 @@
                                     <svg class="expand-icon w-5 h-5 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                                 </div>
                             </div>
-                            <p class="text-neutral-400 mt-4 leading-relaxed">Secure CRUD desktop application with PostgreSQL integration. Demonstrates JDBC connectivity and multi-user authentication for professional contact handling.</p>
+                            <p class="text-neutral-400 mt-4 leading-relaxed">Secure CRUD desktop application with PostgreSQL integration. Demonstrates JDBC connectivity and multi-user authentication.</p>
                         </div>
                         <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
                             <div><p class="text-xl font-bold text-white">ACID</p><p class="text-xs uppercase text-neutral-500">Compliant</p></div>
@@ -296,39 +268,25 @@
                     </div>
                     <div class="md:col-span-2">
                         <div class="mockup-container bg-neutral-900 flex flex-col">
-                            <div class="h-6 bg-neutral-800 flex items-center px-3 gap-1">
-                                <div class="w-1.5 h-1.5 rounded-full bg-red-500/50"></div>
-                                <div class="w-1.5 h-1.5 rounded-full bg-yellow-500/50"></div>
-                            </div>
+                            <div class="h-6 bg-neutral-800 flex items-center px-3 gap-1"><div class="w-1.5 h-1.5 rounded-full bg-red-500/50"></div><div class="w-1.5 h-1.5 rounded-full bg-yellow-500/50"></div></div>
                             <div class="flex-grow p-4 flex gap-3">
-                                <div class="w-1/4 space-y-2 border-r border-white/5 pr-2">
-                                    <div class="h-1.5 w-full bg-blue-500/40 rounded-full"></div>
-                                    <div class="h-1.5 w-2/3 bg-white/5 rounded-full"></div>
-                                    <div class="h-1.5 w-full bg-white/5 rounded-full"></div>
-                                </div>
-                                <div class="flex-grow space-y-3">
-                                    <div class="h-2 w-1/2 bg-white/10 rounded-full"></div>
-                                    <div class="space-y-2">
-                                        <div class="h-6 w-full bg-blue-500/5 rounded border border-white/5"></div>
-                                        <div class="h-6 w-full bg-white/5 rounded"></div>
-                                    </div>
-                                </div>
+                                <div class="w-1/4 space-y-2 border-r border-white/5 pr-2"><div class="h-1.5 w-full bg-blue-500/40 rounded-full"></div><div class="h-1.5 w-2/3 bg-white/5 rounded-full"></div></div>
+                                <div class="flex-grow space-y-3"><div class="h-2 w-1/2 bg-white/10 rounded-full"></div><div class="h-6 w-full bg-white/5 rounded"></div></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Expansion Content -->
                 <div class="details-content grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="space-y-4">
                         <h3 class="text-sm font-semibold uppercase text-blue-400 tracking-wider">The Mission</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed">Creating a professional-grade contact management solution that handles data persistence with integrity. Focused on building a secure user experience on the desktop.</p>
+                        <p class="text-neutral-400 text-sm leading-relaxed">Create a professional grade desktop solution focusing on data persistence integrity and secure user access control.</p>
                     </div>
                     <div class="space-y-4">
                         <h3 class="text-sm font-semibold uppercase text-blue-400 tracking-wider">Technical Core</h3>
                         <ul class="space-y-2 text-sm text-neutral-400">
-                            <li class="flex items-start gap-2"><span>•</span> Implementation of the DAO (Data Access Object) pattern for JDBC operations.</li>
-                            <li class="flex items-start gap-2"><span>•</span> BCrypt-inspired password hashing for secure local user storage.</li>
-                            <li class="flex items-start gap-2"><span>•</span> Dynamic table models in Java Swing for responsive UI updates.</li>
+                            <li>• DAO (Data Access Object) pattern implementation.</li>
+                            <li>• BCrypt hashing for secure credential storage.</li>
+                            <li>• Dynamic Java Swing Table Models for UI updates.</li>
                         </ul>
                     </div>
                 </div>
@@ -348,7 +306,7 @@
                                     <svg class="expand-icon w-5 h-5 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                                 </div>
                             </div>
-                            <p class="text-neutral-400 mt-4 leading-relaxed">Responsive conversational AI bridging a lightweight web frontend with a Flask backend. Leverages LLM APIs for context-aware customer support.</p>
+                            <p class="text-neutral-400 mt-4 leading-relaxed">Responsive conversational AI bridging a lightweight web frontend with a Flask backend. Leverages LLM APIs for context-aware support.</p>
                         </div>
                         <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
                             <div><p class="text-xl font-bold text-white">< 200ms</p><p class="text-xs uppercase text-neutral-500">Response Time</p></div>
@@ -356,43 +314,223 @@
                         </div>
                     </div>
                     <div class="md:col-span-2">
-                        <div class="mockup-container p-4 bg-neutral-900/50 border-cyan-500/10 flex flex-col">
+                        <div class="mockup-container p-4 bg-neutral-900/50 flex flex-col">
                             <div class="space-y-3 flex-grow">
+                                <div class="flex gap-2"><div class="w-5 h-5 rounded-full bg-cyan-500/20 border border-cyan-500/30"></div><div class="h-6 w-24 bg-white/5 rounded-r-lg"></div></div>
+                                <div class="flex gap-2 justify-end"><div class="h-6 w-16 bg-cyan-500/20 rounded-l-lg"></div><div class="w-5 h-5 rounded-full bg-white/10"></div></div>
+                            </div>
+                            <div class="h-8 mt-4 bg-white/5 rounded-full px-3 flex items-center justify-between"><span class="text-[9px] text-neutral-600">Type...</span><div class="w-4 h-4 bg-cyan-500 rounded-full"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="details-content grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h3 class="text-sm font-semibold uppercase text-cyan-400 tracking-wider">The Mission</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed">Democratize access to complex information through natural language agents capable of instant query resolution.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-sm font-semibold uppercase text-cyan-400 tracking-wider">Technical Core</h3>
+                        <ul class="space-y-2 text-sm text-neutral-400">
+                            <li>• OpenAI API integration with custom system prompting.</li>
+                            <li>• Flask REST architecture for low-latency messaging.</li>
+                            <li>• Session-based memory for conversational context.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project 6: Hybrid NetworkX–GNN System -->
+            <section class="glass-card p-8 md:p-10" onclick="toggleExpand(this)">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-10">
+                    <div class="md:col-span-3 space-y-6">
+                        <div>
+                            <span class="badge badge-pink">Graph Neural Networks</span>
+                            <div class="flex flex-wrap items-center justify-between gap-4">
+                                <h2 class="text-3xl font-bold gradient-text-pink">Friend Recommendation System</h2>
                                 <div class="flex gap-2">
-                                    <div class="w-5 h-5 rounded-full bg-cyan-500/20 border border-cyan-500/30"></div>
-                                    <div class="h-6 w-24 bg-white/5 rounded-r-lg rounded-bl-lg"></div>
-                                </div>
-                                <div class="flex gap-2 justify-end">
-                                    <div class="h-6 w-16 bg-cyan-500/20 rounded-l-lg rounded-br-lg border border-cyan-500/10"></div>
-                                    <div class="w-5 h-5 rounded-full bg-white/10"></div>
-                                </div>
-                                <div class="flex gap-2">
-                                    <div class="w-5 h-5 rounded-full bg-cyan-500/20 border border-cyan-500/30"></div>
-                                    <div class="h-8 w-32 bg-white/5 rounded-r-lg rounded-bl-lg"></div>
+                                    <span class="tech-pill">PyTorch PyG</span>
+                                    <span class="tech-pill">NetworkX</span>
+                                    <svg class="expand-icon w-5 h-5 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                                 </div>
                             </div>
-                            <div class="h-8 mt-4 bg-white/5 rounded-full px-3 flex items-center justify-between">
-                                <span class="text-[9px] text-neutral-600">Type message...</span>
-                                <div class="w-4 h-4 rounded-full bg-cyan-500 flex items-center justify-center">
-                                    <svg class="w-2 h-2 text-black" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg>
+                            <p class="text-neutral-400 mt-4 leading-relaxed">A hybrid graph-based ML project that combines NetworkX and GCNs to generate intelligent connections based on learned node embeddings.</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
+                            <div><p class="text-xl font-bold text-white">2-Layer</p><p class="text-xs uppercase text-neutral-500">GCN Architecture</p></div>
+                            <div><p class="text-xl font-bold text-white">PyG</p><p class="text-xs uppercase text-neutral-500">Embedding Engine</p></div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2">
+                        <div class="mockup-container p-4 bg-[#0a0a0a] flex items-center justify-center">
+                            <div class="relative w-full h-full">
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 opacity-40">
+                                    <svg class="w-full h-full" viewBox="0 0 100 100">
+                                        <line x1="20" y1="20" x2="50" y2="50" stroke="#f472b6" stroke-width="0.5" />
+                                        <line x1="80" y1="20" x2="50" y2="50" stroke="#f472b6" stroke-width="0.5" />
+                                        <line x1="20" y1="80" x2="50" y2="50" stroke="#f472b6" stroke-width="0.5" />
+                                        <line x1="80" y1="80" x2="50" y2="50" stroke="#f472b6" stroke-width="0.5" />
+                                        <circle cx="50" cy="50" r="4" fill="#6366f1" class="animate-pulse" />
+                                        <circle cx="20" cy="20" r="3" fill="#f472b6" />
+                                        <circle cx="80" cy="20" r="3" fill="#f472b6" />
+                                        <circle cx="20" cy="80" r="3" fill="#f472b6" />
+                                        <circle cx="80" cy="80" r="3" fill="#f472b6" />
+                                    </svg>
+                                </div>
+                                <div class="absolute inset-0 flex items-center justify-center font-mono text-[8px] text-pink-500/50">LEARNING_EMBEDDINGS...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="details-content space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <h3 class="text-sm font-semibold uppercase text-pink-400 tracking-wider">🚀 Project Workflow</h3>
+                            <ul class="space-y-2 text-sm text-neutral-400">
+                                <li>• Generates synthetic social network graphs (Barabási–Albert model).</li>
+                                <li>• Converts NetworkX graphs to PyTorch Geometric format.</li>
+                                <li>• Trains GCN models to learn user representations.</li>
+                                <li>• Computes similarity-based friend recommendations.</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-sm font-semibold uppercase text-pink-400 tracking-wider">🔧 Key Features</h3>
+                            <ul class="space-y-2 text-sm text-neutral-400">
+                                <li>• Custom 2-layer Graph Convolutional Network (GCN).</li>
+                                <li>• Unsupervised training using embedding similarity (Edge MSE loss).</li>
+                                <li>• Visualization of social graphs with recommended friend highlights.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project 7: Currency Converter App -->
+            <section class="glass-card p-8 md:p-10" onclick="toggleExpand(this)">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-10">
+                    <div class="md:col-span-3 space-y-6">
+                        <div>
+                            <span class="badge badge-emerald">API Integration</span>
+                            <div class="flex flex-wrap items-center justify-between gap-4">
+                                <h2 class="text-3xl font-bold gradient-text-emerald">Currency Converter</h2>
+                                <div class="flex gap-2">
+                                    <span class="tech-pill">Java</span>
+                                    <span class="tech-pill">Frankfurter API</span>
+                                    <svg class="expand-icon w-5 h-5 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                            </div>
+                            <p class="text-neutral-400 mt-4 leading-relaxed">Developed a Java-based currency application that fetches real-time exchange rates. Demonstrates robust error handling and REST API consumption.</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
+                            <div><p class="text-xl font-bold text-white">JSON</p><p class="text-xs uppercase text-neutral-500">Parsing Engine</p></div>
+                            <div><p class="text-xl font-bold text-white">Live</p><p class="text-xs uppercase text-neutral-500">API Fetching</p></div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2">
+                        <div class="mockup-container p-4 bg-neutral-950 flex flex-col justify-center items-center">
+                            <div class="w-full max-w-[140px] space-y-4">
+                                <div class="flex items-center justify-between bg-white/5 p-2 rounded border border-white/10">
+                                    <span class="text-[10px] text-emerald-400 font-bold">USD</span>
+                                    <span class="text-[10px] text-white">1.00</span>
+                                </div>
+                                <div class="flex justify-center">
+                                    <svg class="w-5 h-5 text-emerald-500 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+                                </div>
+                                <div class="flex items-center justify-between bg-emerald-500/10 p-2 rounded border border-emerald-500/20">
+                                    <span class="text-[10px] text-emerald-400 font-bold">EUR</span>
+                                    <span class="text-[10px] text-white">0.92</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-[8px] font-mono text-neutral-600">FETCHING_LATEST_RATES...</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="details-content space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <h3 class="text-sm font-semibold uppercase text-emerald-400 tracking-wider">Features & Implementation</h3>
+                            <ul class="space-y-2 text-sm text-neutral-400">
+                                <li>✅ Real-time data fetching using Frankfurter API.</li>
+                                <li>✅ Java HttpURLConnection for lightweight REST requests.</li>
+                                <li>✅ Robust exception handling for network/API failures.</li>
+                                <li>✅ Clean user interface for source/target selection.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project 8: Loan Assets App -->
+            <section class="glass-card p-8 md:p-10" onclick="toggleExpand(this)">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-10">
+                    <div class="md:col-span-3 space-y-6">
+                        <div>
+                            <span class="badge badge-indigo">Mobile Development</span>
+                            <div class="flex flex-wrap items-center justify-between gap-4">
+                                <h2 class="text-3xl font-bold gradient-text-indigo">Loan Assets App</h2>
+                                <div class="flex gap-2">
+                                    <span class="tech-pill">Android Studio</span>
+                                    <span class="tech-pill">GPS/Exif</span>
+                                    <svg class="expand-icon w-5 h-5 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                            </div>
+                            <p class="text-neutral-400 mt-4 leading-relaxed">A comprehensive mobile solution for loan verification. Beneficiaries upload asset photos embedded with real-time location and timestamps for secure auditing.</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
+                            <div><p class="text-xl font-bold text-white">Secure</p><p class="text-xs uppercase text-neutral-500">Admin Login</p></div>
+                            <div><p class="text-xl font-bold text-white">Geotag</p><p class="text-xs uppercase text-neutral-500">Asset Verification</p></div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2">
+                        <div class="mockup-container p-4 bg-neutral-950 flex flex-col justify-center">
+                            <div class="w-full h-full border border-white/10 rounded-xl overflow-hidden bg-neutral-900 flex flex-col">
+                                <div class="h-6 bg-indigo-600/20 flex items-center justify-center">
+                                    <span class="text-[7px] text-indigo-400 font-bold uppercase tracking-widest">Verification Pipeline</span>
+                                </div>
+                                <div class="flex-grow p-4 flex flex-col items-center justify-center space-y-2">
+                                    <!-- Asset Photo Mockup -->
+                                    <div class="w-16 h-16 bg-white/5 border border-dashed border-white/20 rounded flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-indigo-500/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    </div>
+                                    <div class="w-full space-y-1">
+                                        <div class="flex justify-between items-center"><span class="text-[6px] text-neutral-500">LAT/LONG</span><span class="text-[6px] text-emerald-400">MATCHED</span></div>
+                                        <div class="h-1 w-full bg-indigo-500/20 rounded-full"><div class="h-full bg-indigo-500 w-[90%]"></div></div>
+                                    </div>
+                                </div>
+                                <div class="h-8 bg-emerald-500/20 flex items-center justify-center">
+                                    <span class="text-[8px] text-emerald-400 font-bold">ASSET_VERIFIED</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Expansion Content -->
-                <div class="details-content grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="space-y-4">
-                        <h3 class="text-sm font-semibold uppercase text-cyan-400 tracking-wider">The Mission</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed">Democratizing access to high-level information through natural language. This chatbot acts as an intelligent first-line support agent, capable of resolving common queries instantly.</p>
+                <div class="details-content space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <h3 class="text-sm font-semibold uppercase text-indigo-400 tracking-wider">Mobile Features</h3>
+                            <ul class="space-y-2 text-sm text-neutral-400">
+                                <li>• Beneficiary registration module with secure profile management.</li>
+                                <li>• Camera integration with automatic Exif metadata embedding.</li>
+                                <li>• GPS-fencing to ensure photos are taken at registered locations.</li>
+                                <li>• Offline-first support for remote area usage.</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-sm font-semibold uppercase text-indigo-400 tracking-wider">Admin Dashboard</h3>
+                            <ul class="space-y-2 text-sm text-neutral-400">
+                                <li>• Multi-level approval system for loan officers.</li>
+                                <li>• Visual review of beneficiary asset evidence.</li>
+                                <li>• Automated report generation for loan disbursement readiness.</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="space-y-4">
-                        <h3 class="text-sm font-semibold uppercase text-cyan-400 tracking-wider">Technical Core</h3>
-                        <ul class="space-y-2 text-sm text-neutral-400">
-                            <li class="flex items-start gap-2"><span>•</span> Implementation of OpenAI API endpoints with customized system prompts.</li>
-                            <li class="flex items-start gap-2"><span>•</span> Flask-based REST architecture for efficient frontend-backend communication.</li>
-                            <li class="flex items-start gap-2"><span>•</span> Session-based memory handling to maintain conversational context.</li>
-                        </ul>
+                    <div class="pt-4 border-t border-white/5">
+                        <h3 class="text-sm font-semibold uppercase text-indigo-400 tracking-wider mb-3">🛠 Technologies</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-pill">Android SDK</span>
+                            <span class="tech-pill">Google Maps API</span>
+                            <span class="tech-pill">Firebase Auth</span>
+                            <span class="tech-pill">Local SQLite Cache</span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -405,13 +543,11 @@
 
     <script>
         function toggleExpand(element) {
-            // Close all other cards first (Optional: comment out if you want multiple open)
-            document.querySelectorAll('.glass-card').forEach(card => {
-                if (card !== element) card.classList.remove('expanded');
-            });
-            
-            // Toggle the current card
-            element.classList.toggle('expanded');
+            const isExpanded = element.classList.contains('expanded');
+            // Close all cards first for a clean accordion effect
+            document.querySelectorAll('.glass-card').forEach(card => card.classList.remove('expanded'));
+            // If the clicked one wasn't expanded, expand it
+            if (!isExpanded) element.classList.add('expanded');
         }
     </script>
 </body>
